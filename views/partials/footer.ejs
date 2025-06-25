@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/validation.js"></script>
+</head>
+<body>
+    <footer class="footer">
+        <div class="container">
+            <span class="text-muted">© 2023 Travel Journal App. All rights reserved.</span>
+        </div>
+    </footer>
+   <script>
+  window.addEventListener('load', () => {
+    const spinner = document.getElementById('spinner');
+    if (spinner) spinner.style.display = 'none';
+  });
+
+  const forms = document.querySelectorAll('form');
+  forms.forEach(form => {
+    form.addEventListener('submit', () => {
+      const spinner = document.getElementById('spinner');
+      if (spinner) spinner.style.display = 'flex';
+    });
+  });
+</script>
+<div id="spinner" class="spinner-overlay" style="display: none;">
+  <div class="spinner"></div>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('fade-in');
+    });
+  </script>
+
+</body>
+</html>

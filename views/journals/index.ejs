@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Travel Journals</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <div class="container">
+        <h1>Your Travel Journals</h1>
+        <a href="/journals/new" class="btn btn-primary">Create New Journal</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Destination</th>
+                    <th>Arrival Date</th>
+                    <th>Departure Date</th>
+                    <th>Experience</th>
+                    <th>Rating</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% journals.forEach(journal => { %>
+                    <tr>
+                        <td><%= journal.destination %></td>
+                        <td><%= journal.arrivalDate.toDateString() %></td>
+                        <td><%= journal.departureDate.toDateString() %></td>
+                        <td><%= journal.experience %></td>
+                        <td><%= journal.rating %></td>
+                        <td>
+  <div class="action-buttons">
+    <a href="/journals/<%= journal._id %>" class="btn view-btn" title="View Journal">
+      <i class="fas fa-eye"></i>
+    </a>
+    <a href="/journals/<%= journal._id %>/edit" class="btn edit-btn" title="Edit Journal">
+      <i class="fas fa-pen"></i>
+    </a>
+    <form action="/journals/<%= journal._id %>?_method=DELETE" method="POST">
+      <button type="submit" class="btn delete-btn" title="Delete Journal">
+        <i class="fas fa-trash"></i>
+      </button>
+    </form>
+  </div>
+</td>
+
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <%- include('../partials/footer') %>
+</body>
+</html>

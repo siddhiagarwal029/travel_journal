@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Journal Entry</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <%- include('../partials/header') %>
+
+<div class="container mt-5">
+    <h2>Create a New Journal Entry</h2>
+    <h2 class="typing-text"></h2>
+
+    <form action="/journals" method="POST">
+        <div class="form-group">
+            <label for="destination">Destination</label>
+            <input type="text" class="form-control" name="destination" required>
+        </div>
+        <div class="form-group">
+            <label for="arrivalDate">Arrival Date</label>
+            <input type="date" class="form-control" name="arrivalDate" required>
+        </div>
+        <div class="form-group">
+            <label for="departureDate">Departure Date</label>
+            <input type="date" class="form-control" name="departureDate" required>
+        </div>
+        <div class="form-group">
+            <label for="experience">Experience</label>
+            <textarea class="form-control" name="experience" rows="4" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="rating">Rating (1-5)</label>
+            <input type="number" class="form-control" name="rating" min="1" max="5" required>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Save Entry</button>
+    </form>
+</div>
+
+<%- include('../partials/footer') %>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/js/validation.js"></script>
+</body>
+</html>

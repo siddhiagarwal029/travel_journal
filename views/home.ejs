@@ -1,0 +1,24 @@
+<!-- views/home.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Travel Journal 🌍</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <%- include('partials/header') %>
+
+  <main class="container">
+    <h1 class="typing-text">Welcome to the Travel Journal App! ✈️</h1>
+    <p style="text-align: center;">Log in or register to start documenting your adventures!</p>
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="/login" class="btn">Login</a>
+      <a href="/register" class="btn">Register</a>
+    </div>
+  </main>
+
+  <%- include('partials/footer') %>
+  
+</body>
+</html>

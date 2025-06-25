@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Journal Details</title>
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <div class="container mt-5">
+        <h1><%= journal.destination %></h1>
+        <p><strong>Arrival Date:</strong> <%= journal.arrivalDate.toDateString() %></p>
+        <p><strong>Departure Date:</strong> <%= journal.departureDate.toDateString() %></p>
+        <p><strong>Experience:</strong> <%= journal.experience %></p>
+        <p><strong>Rating:</strong> <%= journal.rating %> / 5</p>
+        <a href="/journals/<%= journal._id %>/edit" class="btn btn-warning">Edit</a>
+        <form action="/journals/<%= journal._id %>?_method=DELETE" method="POST" class="d-inline">
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+        <a href="/journals" class="btn btn-secondary">Back to Journals</a>
+    </div>
+    <%- include('../partials/footer') %>
+</body>
+</html>
